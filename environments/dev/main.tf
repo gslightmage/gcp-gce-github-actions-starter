@@ -36,3 +36,4 @@ resource "google_compute_firewall" "example_firewall" {
 
   source_ranges = ["0.0.0.0/0"]
 }
+# Trigger pipeline
