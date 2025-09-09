@@ -63,7 +63,7 @@ jobs:
         env:
           TF_VAR_GCP_CREDENTIALS: ${{ secrets.TF_VAR_GCP_CREDENTIALS_2 }}
         run: |
-          TF_VAR_GCP_CREDENTIALS=`echo $TF_VAR_GCP_CREDENTIALS | base64 -d` 
+          TF_VAR_GCP_CREDENTIALS=`echo ${{ secrets.TF_VAR_GCP_CREDENTIALS_2 }} | base64 -d` 
           cd environments/${{ env.TF_ENVIRONMENT }}
           terraform plan -no-color -input=false
         continue-on-error: true
