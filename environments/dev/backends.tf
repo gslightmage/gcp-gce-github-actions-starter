@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = " my-first-project-config-bucket"
+    bucket = "my-first-project-config-bucket"
     prefix = "terraform/state/dev"
   }
 
