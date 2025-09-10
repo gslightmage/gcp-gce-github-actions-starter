@@ -11,7 +11,7 @@ resource "google_compute_instance" "example" {
     }
   }
 
-  resource_policies = ([google_compute_resource_policy.conservative.instance.instance_schedule_policy])
+  resource_policies = ([google_compute_resource_policy.conservative.instances.instance_schedule_policy])
 
   network_interface {
     network = "default"
