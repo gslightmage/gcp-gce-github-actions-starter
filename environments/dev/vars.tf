@@ -6,7 +6,7 @@ variable "gcp" {
 
   default = {
     project = "peppy-goods-471518-m1"
-    region  = "us-central1-a"
+    region  = "us-central1"
   }
 }
 
