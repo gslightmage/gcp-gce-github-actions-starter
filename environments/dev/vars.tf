@@ -14,3 +14,4 @@ variable "GCP_CREDENTIALS" {
   type      = string
   sensitive = true
 }
+

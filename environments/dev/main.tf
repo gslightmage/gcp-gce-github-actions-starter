@@ -11,6 +11,8 @@ resource "google_compute_instance" "example" {
     }
   }
 
+  #resource_policies = ([google_compute_resource_policy.conservative])
+
   network_interface {
     network = "default"
     access_config {
@@ -38,3 +40,4 @@ resource "google_compute_firewall" "example_firewall" {
 }
 # Trigger pipeline again
 # Again and again and again
+
