@@ -21,7 +21,7 @@ resource "google_compute_instance" "example" {
   }
 
 }
-resource "google_compute_instance" "example 2" {
+resource "google_compute_instance" "example=2" {
   name                      = "example-2"
   project                   = var.gcp.project
   zone                      = "${var.gcp.region}-a"
