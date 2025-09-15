@@ -1,3 +1,7 @@
+resource "google_compute_address" "example" {
+  name = "example-ipv4-address"
+}
+
 resource "google_compute_instance" "example" {
   name                      = "example-instance"
   project                   = var.gcp.project
@@ -16,10 +20,14 @@ resource "google_compute_instance" "example" {
   network_interface {
     network = "default"
     access_config {
-      // Ephemeral external IP
+      nat_ip = google_compute_address.example.address
     }
   }
 
+}
+
+resource "google_compute_address" "example_2" {
+  name = "example2-ipv4-address"
 }
 resource "google_compute_instance" "example_2" {
   name                      = "example-2"
@@ -39,7 +47,7 @@ resource "google_compute_instance" "example_2" {
   network_interface {
     network = "default"
     access_config {
-      // Ephemeral external IP
+      nat_ip = google_compute_address.example_2.address
     }
   }
 
