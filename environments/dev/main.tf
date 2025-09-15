@@ -21,6 +21,29 @@ resource "google_compute_instance" "example" {
   }
 
 }
+resource "google_compute_instance" "example_2" {
+  name                      = "example-2"
+  project                   = var.gcp.project
+  zone                      = "${var.gcp.region}-a"
+  machine_type              = "f1-micro"
+  allow_stopping_for_update = true
+
+  boot_disk {
+    initialize_params {
+      image = "ubuntu-os-cloud/ubuntu-2404-lts-amd64"
+    }
+  }
+
+  resource_policies = [google_compute_resource_policy.conservative.id]
+
+  network_interface {
+    network = "default"
+    access_config {
+      // Ephemeral external IP
+    }
+  }
+
+}
 
 resource "google_compute_firewall" "example_firewall" {
   name    = "example-firewall"
