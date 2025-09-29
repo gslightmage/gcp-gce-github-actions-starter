@@ -9,7 +9,7 @@ resource "google_compute_resource_policy" "conservative" {
       schedule = "59 09 * * *"
     }
     vm_stop_schedule {
-      schedule = "59 15 * * *"
+      schedule = "59 11 * * *"
     }
     time_zone = "US/Central"
   }
